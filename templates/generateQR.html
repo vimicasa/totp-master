@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+    
+<div> Scan this QR to add this app as a 2FA:</div>
+
+    <div>
+        <h4>email: {{email}}</h4>
+        <h4>OTP QR (url): {{otpQR}}</h4>
+    </div>
+    <div>
+        <h4>QR:</h4>
+    </div>
+    <canvas id="qr"></canvas>    
+
+    <script src="../static/qrious.min.js"></script>
+    <script>
+    (function() {
+        var qr = new QRious({
+        element: document.getElementById('qr'),
+        value: '{{otpQR}}'
+        });
+    })();
+    </script>
+{% endblock %}
+

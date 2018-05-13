@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+    
+    <h3>This a POC of TOTP</h3>
+
+    <div>
+        You have two options in this app:
+        <ul>
+            <li><a href="{{ url_for('login') }}">Login</a> an link 2FA via QR</li>
+            <li><a href="{{ url_for('verify') }}">Verify token</a> </li>
+        </ul>
+        
+    </div>
+{% endblock %}

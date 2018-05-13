@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <title>Campus Ciberseguridad - TOTP</title>
+</head>
+ 
+<body>
+    
+    <div>
+        <div>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>  
+                    <li><a href="{{ url_for('login') }}">Login</a></li>                  
+                    <li><a href="{{ url_for('verify') }}">Verify</a></li> 
+                </ul>
+            </nav>
+        </div>
+ 
+        
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <h2>RESULTS:</h2>
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %} 
+        
+        <footer class="footer">
+            <p>&copy; V&iacute;ctor Catal&aacute;n 2018</p>
+        </footer>
+ 
+    </div>
+</body>
+ 
+</html>
